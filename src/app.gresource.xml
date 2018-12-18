@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<gresources>
+    <gresource prefix="/org/gtk/notepadplusplus">
+        <file preprocess="xml-stripblanks">app-menu.ui</file>
+        <file preprocess="xml-stripblanks">mainwindow.ui</file>
+        <file alias="index.theme">../icons/notepad++/index.theme</file>
+    </gresource>
+    <gresource prefix="/org/gtk/notepadplusplus/icons">
+		<file alias="16x16/document-close.png">../icons/notepad++/16x16/document-close.png</file>
+		<file alias="16x16/document-close-all.png">../icons/notepad++/16x16/document-close-all.png</file>
+		<file alias="16x16/document-new.png">../icons/notepad++/16x16/document-new.png</file>
+		<file alias="16x16/document-open.png">../icons/notepad++/16x16/document-open.png</file>
+		<file alias="16x16/document-print.png">../icons/notepad++/16x16/document-print.png</file>
+
+		<file alias="16x16/document-save.png">../icons/notepad++/16x16/document-save.png</file>
+		<file alias="64x64/document-save.png">../icons/notepad++/64x64/document-save.png</file>
+		<file alias="128x128/document-save.png">../icons/notepad++/128x128/document-save.png</file>
+
+		<file alias="16x16/document-save-all.png">../icons/notepad++/16x16/document-save-all.png</file>
+		<file alias="16x16/document-save-as.png">../icons/notepad++/16x16/document-save-as.png</file>
+		<file alias="16x16/edit-copy.png">../icons/notepad++/16x16/edit-copy.png</file>
+		<file alias="16x16/edit-cut.png">../icons/notepad++/16x16/edit-cut.png</file>
+		<file alias="16x16/edit-find.png">../icons/notepad++/16x16/edit-find.png</file>
+		<file alias="16x16/edit-find-replace.png">../icons/notepad++/16x16/edit-find-replace.png</file>
+		<file alias="16x16/edit-paste.png">../icons/notepad++/16x16/edit-paste.png</file>
+		<file alias="16x16/edit-redo.png">../icons/notepad++/16x16/edit-redo.png</file>
+		<file alias="16x16/edit-undo.png">../icons/notepad++/16x16/edit-undo.png</file>
+		<file alias="16x16/math-rendering.png">../icons/notepad++/16x16/math-rendering.png</file>
+		<file alias="128x128/math-rendering.png">../icons/notepad++/128x128/math-rendering.png</file>
+		<file alias="16x16/media-playback-start.png">../icons/notepad++/16x16/media-playback-start.png</file>
+		<file alias="16x16/media-playback-stop.png">../icons/notepad++/16x16/media-playback-stop.png</file>
+		<file alias="16x16/media-record.png">../icons/notepad++/16x16/media-record.png</file>
+		<file alias="16x16/media-seek-forward.png">../icons/notepad++/16x16/media-seek-forward.png</file>
+		<file alias="scalable/notepadqq.svg">../icons/notepad++/scalable/notepadqq.svg</file>
+		<file alias="16x16/document-saved.png">../icons/notepad++/16x16/document-saved.png</file>
+		<file alias="16x16/document-unsaved.png">../icons/notepad++/16x16/document-unsaved.png</file>
+		<file alias="16x16/preferences-other.png">../icons/notepad++/16x16/preferences-other.png</file>
+		<file alias="16x16/show-special-chars.png">../icons/notepad++/16x16/show-special-chars.png</file>
+		<file alias="16x16/word-wrap.png">../icons/notepad++/16x16/word-wrap.png</file>
+		<file alias="16x16/zoom-in.png">../icons/notepad++/16x16/zoom-in.png</file>
+		<file alias="16x16/zoom-original.png">../icons/notepad++/16x16/zoom-original.png</file>
+		<file alias="16x16/zoom-out.png">../icons/notepad++/16x16/zoom-out.png</file>
+    </gresource>
+</gresources>

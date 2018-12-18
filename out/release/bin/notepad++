@@ -1,0 +1,18 @@
+#!/bin/sh
+SCRIPTPATH="$(dirname "$(readlink -f "$0")")"
+
+if [ -f "$SCRIPTPATH"/../lib/notepad++/notepad++-bin ]; then
+    # N++ is installed: this script is in bin/
+    exec "$SCRIPTPATH"/../lib/notepad++/notepad++-bin "$@"
+elif [ -f "$SCRIPTPATH"/../lib/notepad++-bin ]; then
+    # N++ is not installed: this script is in bin/
+    exec "$SCRIPTPATH"/../lib/notepad++-bin "$@"
+elif [ -f "$SCRIPTPATH"/../../usr/libexec/notepad++/notepad++-bin ]; then
+    # N++ installed via rpm package (Fedora):
+    # Script is installed in /usr/libexec/notepad++ folder for comply with FHS and run without changing much
+    exec "$SCRIPTPATH"/../../usr/libexec/notepad++/notepad++-bin "$@"
+else
+    # N++ is installed via deb package:
+    # this script is in the same directory as the binary file.
+    exec "$SCRIPTPATH"/notepad++-bin "$@"
+fi

@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<interface>
+    <!-- interface-requires gtk+ 3.8 -->
+    <requires lib="gtk+" version="3.8"/>
+    <!-- File Menu Icons -->
+    <object class="GtkImage" id="document-new">
+        <property name="can_focus">False</property>
+        <property name="resource">/org/gtk/notepadplusplus/icons/16x16/document-new.png</property>
+    </object>
+    <object class="GtkImage" id="document-open">
+        <property name="can_focus">False</property>
+        <property name="resource">/org/gtk/notepadplusplus/icons/16x16/document-open.png</property>
+    </object>
+    <object class="GtkImage" id="document-reload">
+        <property name="can_focus">False</property>
+        <property name="stock">gtk-reload</property>
+    </object>
+    <object class="GtkImage" id="document-save">
+        <property name="can_focus">False</property>
+        <property name="resource">/org/gtk/notepadplusplus/icons/16x16/document-save.png</property>
+    </object>
+    <object class="GtkImage" id="document-save-as">
+        <property name="can_focus">False</property>
+        <property name="resource">/org/gtk/notepadplusplus/icons/16x16/document-save-as.png</property>
+    </object>
+    <object class="GtkImage" id="document-save-as-copy">
+        <property name="can_focus">False</property>
+        <property name="resource">/org/gtk/notepadplusplus/icons/16x16/document-save-as.png</property>
+    </object>
+    <object class="GtkImage" id="document-save-all">
+        <property name="can_focus">False</property>
+        <property name="resource">/org/gtk/notepadplusplus/icons/16x16/document-save-all.png</property>
+    </object>
+    <object class="GtkImage" id="document-close">
+        <property name="can_focus">False</property>
+        <property name="resource">/org/gtk/notepadplusplus/icons/16x16/document-close.png</property>
+    </object>
+    <object class="GtkImage" id="document-close-all">
+        <property name="can_focus">False</property>
+        <property name="resource">/org/gtk/notepadplusplus/icons/16x16/document-close-all.png</property>
+    </object>
+    <object class="GtkImage" id="document-print">
+        <property name="can_focus">False</property>
+        <property name="resource">/org/gtk/notepadplusplus/icons/16x16/document-print.png</property>
+    </object>
+    <object class="GtkImage" id="document-quit">
+        <property name="can_focus">False</property>
+        <property name="stock">gtk-quit</property>
+    </object>
+    <!-- Edit Menu Icons -->
+    <object class="GtkImage" id="edit-undo">
+        <property name="can_focus">False</property>
+        <property name="resource">/org/gtk/notepadplusplus/icons/16x16/edit-undo.png</property>
+    </object>
+    <object class="GtkImage" id="edit-redo">
+        <property name="can_focus">False</property>
+        <property name="resource">/org/gtk/notepadplusplus/icons/16x16/edit-redo.png</property>
+    </object>
+    <object class="GtkImage" id="edit-cut">
+        <property name="can_focus">False</property>
+        <property name="resource">/org/gtk/notepadplusplus/icons/16x16/edit-cut.png</property>
+    </object>
+    <object class="GtkImage" id="edit-copy">
+        <property name="can_focus">False</property>
+        <property name="resource">/org/gtk/notepadplusplus/icons/16x16/edit-copy.png</property>
+    </object>
+    <object class="GtkImage" id="edit-paste">
+        <property name="can_focus">False</property>
+        <property name="resource">/org/gtk/notepadplusplus/icons/16x16/edit-paste.png</property>
+    </object>
+    <object class="GtkImage" id="edit-delete">
+        <property name="can_focus">False</property>
+        <property name="stock">gtk-delete</property>
+    </object>
+    <object class="GtkImage" id="edit-select-all">
+        <property name="can_focus">False</property>
+        <property name="stock">gtk-select-all</property>
+    </object>
+    <template class="MainWindow" parent="GtkApplicationWindow">
+        <property name="can_focus">False</property>
+        <property name="default-height">400</property>
+        <property name="default-width">600</property>
+        <property name="title" translatable="yes">Notepad++</property>
+        <child>
+            <object class="GtkBox" id="content_box">
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                    <object class="GtkMenuBar" id="menubar">
+                        <property name="can_focus">False</property>
+                        <child>
+                            <object class="GtkMenuItem" id="menu_file">
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">_File</property>
+                                <property name="use_underline">True</property>
+                                <child type="submenu">
+                                    <object class="GtkMenu">
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_new">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">document-new</property>
+                                                <property name="label" translatable="true">_New</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="N" modifiers="GDK_CONTROL_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_open">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">document-open</property>
+                                                <property name="label" translatable="true">_Open...</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="O" modifiers="GDK_CONTROL_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_folder">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="label" translatable="true">Open _Folder...</property>
+                                                <property name="use_underline">True</property>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_reload">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">document-reload</property>
+                                                <property name="label" translatable="true">_Reload from Disk</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="O" modifiers="GDK_CONTROL_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_save">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">document-save</property>
+                                                <property name="label" translatable="true">_Save</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="S" modifiers="GDK_CONTROL_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_save_as">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">document-save-as</property>
+                                                <property name="label" translatable="true">Save _As...</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="S" modifiers="GDK_CONTROL_MASK | GDK_MOD1_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_save_copy">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">document-save-as-copy</property>
+                                                <property name="label" translatable="true">Sa_ve a Copy As...</property>
+                                                <property name="use_underline">True</property>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_save_all">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">document-save-all</property>
+                                                <property name="label" translatable="true">Sav_e All</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="S" modifiers="GDK_SHIFT_MASK | GDK_CONTROL_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_rename">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="label" translatable="true">Re_name...</property>
+                                                <property name="use_underline">True</property>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_close">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">document-close</property>
+                                                <property name="label" translatable="true">_Close</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="W" modifiers="GDK_CONTROL_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_close_all">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">document-close-all</property>
+                                                <property name="label" translatable="true">C_lose All</property>
+                                                <property name="use_underline">True</property>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_close_except">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="label" translatable="true">Close All _BUT Current Document</property>
+                                                <property name="use_underline">True</property>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkSeparatorMenuItem">
+                                                <property name="can_focus">False</property>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_load_session">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="label" translatable="true">Load Session...</property>
+                                                <property name="use_underline">True</property>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_save_session">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="label" translatable="true">Save Session...</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="S" modifiers="GDK_SHIFT_MASK | GDK_CONTROL_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkSeparatorMenuItem">
+                                                <property name="can_focus">False</property>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_print">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">document-print</property>
+                                                <property name="label" translatable="true">_Print...</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="P" modifiers="GDK_CONTROL_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_recent">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="label" translatable="true">Recent Files</property>
+                                                <property name="use_underline">True</property>
+                                                <child type="submenu">
+                                                    <object class="GtkMenu">
+                                                        <child>
+                                                            <object class="GtkSeparatorMenuItem">
+                                                                <property name="can_focus">False</property>
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="GtkImageMenuItem" id="menu_open_recents">
+                                                                <property name="always_show_image">True</property>
+                                                                <property name="can_focus">False</property>
+                                                                <property name="label" translatable="true">Open All Recent Files</property>
+                                                                <property name="use_underline">True</property>
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="GtkSeparatorMenuItem">
+                                                                <property name="can_focus">False</property>
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="GtkImageMenuItem" id="menu_empty_recents">
+                                                                <property name="always_show_image">True</property>
+                                                                <property name="can_focus">False</property>
+                                                                <property name="label" translatable="true">Emptye Recent Files List</property>
+                                                                <property name="use_underline">True</property>
+                                                            </object>
+                                                        </child>
+                                                    </object>
+                                                </child>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkSeparatorMenuItem">
+                                                <property name="can_focus">False</property>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_exit">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">document-quit</property>
+                                                <property name="label" translatable="true">E_xit</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="F4" modifiers="GDK_MOD1_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkMenuItem" id="menu_edit">
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">_Edit</property>
+                                <property name="use_underline">True</property>
+                                <child type="submenu">
+                                    <object class="GtkMenu">
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_undo">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">edit-undo</property>
+                                                <property name="label" translatable="true">_Undo</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="Z" modifiers="GDK_CONTROL_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_redo">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">edit-redo</property>
+                                                <property name="label" translatable="true">_Redo</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="Y" modifiers="GDK_CONTROL_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkSeparatorMenuItem">
+                                                <property name="can_focus">False</property>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_cut">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">edit-cut</property>
+                                                <property name="label" translatable="true">Cu_t</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="X" modifiers="GDK_CONTROL_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_copy">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">edit-copy</property>
+                                                <property name="label" translatable="true">_Copy</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="C" modifiers="GDK_CONTROL_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_paste">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">edit-paste</property>
+                                                <property name="label" translatable="true">_Paste</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="V" modifiers="GDK_CONTROL_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_delete">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">edit-delete</property>
+                                                <property name="label" translatable="true">_Delete</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="Delete" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_select">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="image">edit-select-all</property>
+                                                <property name="label" translatable="true">Select _All</property>
+                                                <property name="use_underline">True</property>
+                                                <accelerator key="A" modifiers="GDK_CONTROL_MASK" signal="activate" />
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkSeparatorMenuItem">
+                                                <property name="can_focus">False</property>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_clipboard">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="label" translatable="true">C_opy to Clipboard</property>
+                                                <property name="use_underline">True</property>
+                                                <child type="submenu">
+                                                    <object class="GtkMenu">
+                                                        <property name="can_focus">False</property>
+                                                        <child>
+                                                            <object class="GtkImageMenuItem" id="menu_path">
+                                                                <property name="always_show_image">True</property>
+                                                                <property name="can_focus">False</property>
+                                                                <property name="label" translatable="true">_Copy Full Path to Clipbard</property>
+                                                                <property name="use_underline">True</property>
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="GtkImageMenuItem" id="menu_filename">
+                                                                <property name="always_show_image">True</property>
+                                                                <property name="can_focus">False</property>
+                                                                <property name="label" translatable="true">Copy _Filename to Clipbard</property>
+                                                                <property name="use_underline">True</property>
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="GtkImageMenuItem" id="menu_directory">
+                                                                <property name="always_show_image">True</property>
+                                                                <property name="can_focus">False</property>
+                                                                <property name="label" translatable="true">Copy _Directory to Clipboard</property>
+                                                                <property name="use_underline">True</property>
+                                                            </object>
+                                                        </child>
+                                                    </object>
+                                                </child>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_convert">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="label" translatable="true">Co_nvert Case to</property>
+                                                <property name="use_underline">True</property>
+                                                <child type="submenu">
+                                                    <object class="GtkMenu">
+                                                        <property name="can_focus">False</property>
+                                                        <child>
+                                                            <object class="GtkImageMenuItem" id="menu_upper">
+                                                                <property name="always_show_image">True</property>
+                                                                <property name="can_focus">False</property>
+                                                                <property name="label" translatable="true">_UPPERCASE</property>
+                                                                <property name="use_underline">True</property>
+                                                                <accelerator key="U" modifiers="GDK_SHIFT_MASK | GDK_CONTROL_MASK" signal="activate" />
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="GtkImageMenuItem" id="menu_lower">
+                                                                <property name="always_show_image">True</property>
+                                                                <property name="can_focus">False</property>
+                                                                <property name="label" translatable="true">_lowercase</property>
+                                                                <property name="use_underline">True</property>
+                                                                <accelerator key="U" modifiers="GDK_CONTROL_MASK" signal="activate" />
+                                                            </object>
+                                                        </child>
+                                                    </object>
+                                                </child>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_line">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="label" translatable="true">_Line Operations</property>
+                                                <property name="use_underline">True</property>
+                                                <child type="submenu">
+                                                    <object class="GtkMenu">
+                                                        <property name="can_focus">False</property>
+                                                        <child>
+                                                            <object class="GtkImageMenuItem" id="menu_duplicate">
+                                                                <property name="always_show_image">True</property>
+                                                                <property name="can_focus">False</property>
+                                                                <property name="label" translatable="true">_Duplicate Current Line</property>
+                                                                <property name="use_underline">True</property>
+                                                                <accelerator key="D" modifiers="GDK_SHIFT_MASK | GDK_CONTROL_MASK" signal="activate" />
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="GtkImageMenuItem" id="menu_del">
+                                                                <property name="always_show_image">True</property>
+                                                                <property name="can_focus">False</property>
+                                                                <property name="label" translatable="true">Delete _Current Line</property>
+                                                                <property name="use_underline">True</property>
+                                                                <accelerator key="L" modifiers="GDK_CONTROL_MASK" signal="activate" />
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="GtkImageMenuItem" id="menu_up">
+                                                                <property name="always_show_image">True</property>
+                                                                <property name="can_focus">False</property>
+                                                                <property name="label" translatable="true">_Move Line Up</property>
+                                                                <property name="use_underline">True</property>
+                                                                <accelerator key="Up" modifiers="GDK_SHIFT_MASK | GDK_CONTROL_MASK" signal="activate" />
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="GtkImageMenuItem" id="menu_down">
+                                                                <property name="always_show_image">True</property>
+                                                                <property name="can_focus">False</property>
+                                                                <property name="label" translatable="true">Move _Line Down</property>
+                                                                <property name="use_underline">True</property>
+                                                                <accelerator key="Down" modifiers="GDK_SHIFT_MASK | GDK_CONTROL_MASK" signal="activate" />
+                                                            </object>
+                                                        </child>
+                                                    </object>
+                                                </child>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkImageMenuItem" id="menu_end">
+                                                <property name="always_show_image">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="label" translatable="true">_End of Line</property>
+                                                <property name="use_underline">True</property>
+                                                <child type="submenu">
+                                                    <object class="GtkMenu">
+                                                        <property name="can_focus">False</property>
+                                                        <child>
+                                                            <object class="GtkImageMenuItem" id="menu_win">
+                                                                <property name="always_show_image">True</property>
+                                                                <property name="can_focus">False</property>
+                                                                <property name="label" translatable="true">_Windows Format</property>
+                                                                <property name="name">radio</property>
+                                                                <property name="use_underline">True</property>
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="GtkImageMenuItem" id="menu_unix">
+                                                                <property name="always_show_image">True</property>
+                                                                <property name="can_focus">False</property>
+                                                                <property name="label" translatable="true">_Unix / OS X Format</property>
+                                                                <property name="name">radio</property>
+                                                                <property name="use_underline">True</property>
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="GtkImageMenuItem" id="menu_mac">
+                                                                <property name="always_show_image">True</property>
+                                                                <property name="can_focus">False</property>
+                                                                <property name="label" translatable="true">_Old Mac Format</property>
+                                                                <property name="name">radio</property>
+                                                                <property name="use_underline">True</property>
+                                                                <accelerator key="O" modifiers="GDK_CONTROL_MASK | GDK_SUPER_MASK" signal="activate" />
+                                                            </object>
+                                                        </child>
+                                                    </object>
+                                                </child>
+                                            </object>
+                                        </child>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkStack" id="stack">
+                        <child>
+                            <object class="GtkButton" id="test_button">
+                                <property name="label">Click me</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </template>
+</interface>
